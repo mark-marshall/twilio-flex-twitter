@@ -5,10 +5,10 @@ This repo contains a proof of concept Express app for adding Twitter Direct Mess
 
 ## Provision
 1. Install dependencies
-`yarn install`
+```yarn install```
 
 2. Run the provision script
-`node provision.js`
+```node provision.js```
 
 The provision script will request:
 * A Twilio Account SID (make sure this relates to an account containing your Flex project)
@@ -21,10 +21,10 @@ The provision script will:
 
 ## Start Application
 1. Navigate to the application file
-`cd flex-twitter`
+```cd flex-twitter```
 
 2. Install dependencies
-`yarn install`
+```yarn install```
 
 3. Complete the .env file (use the env.example file for guidance):
 * A url that the application will be deployedon
