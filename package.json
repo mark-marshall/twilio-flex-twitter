@@ -1,0 +1,14 @@
+{
+  "name": "twilio-flex-twitter-wrapper",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node provision.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "inquirer": "^8.1.1",
+    "twilio": "^3.65.0",
+    "twit": "^2.2.11"
+  }
+}

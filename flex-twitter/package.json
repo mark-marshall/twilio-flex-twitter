@@ -1,0 +1,28 @@
+{
+  "name": "twilio-flex-twitter",
+  "version": "1.0",
+  "description": "Proof of concept middleware between Twilio Flex and Twitter Direct Messaging",
+  "private": false,
+  "dependencies": {
+    "base-64": "^1.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "ngrok": "^4.0.1",
+    "node-fetch": "^2.6.1",
+    "twilio": "^3.65.0",
+    "twit": "^2.2.11"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "webhook",
+    "twilio",
+    "twitter"
+  ],
+  "license": "MIT"
+}
