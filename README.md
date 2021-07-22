@@ -35,7 +35,7 @@ yarn install
 ```
 
 3. Complete the .env file (use the env.example file for guidance):
-* A url that the application will be deployedon
+* A url that the application will be deployed on
 * Twitter consumer key and secret
 * Twitter access key and secret
 * Twitter handle of the account that will be receiving support messages
