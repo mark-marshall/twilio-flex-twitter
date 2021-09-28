@@ -3,12 +3,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const twilio = require('twilio');
 const Twitter = require('twit');
+const sgMail = require('@sendgrid/mail');
+var cors = require('cors');
 
 // ================== Function Imports ==================
 const functions = require('./functions');
 
 // ================== Initialise App ==================
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -69,6 +72,25 @@ app.post('/fromFlex', async (req, res) => {
     const msg = req.body.Body;
     functions.sendMessageToTwitter(twitterClient, msg, twitterId);
   }
+  res.sendStatus(200);
+});
+
+// SURPLUS
+app.post('/sendEmail', async (req, res) => {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  const { firstName, amount, reason, close } = req.body;
+  const msg = {
+    to: 'vinnypeters30@gmail.com',
+    from: 'mark.marshallgp@gmail.com',
+    templateId: 'd-f360ebe35a2a483f93ee85f6c7d09eb3',
+    dynamicTemplateData: {
+      firstName,
+      reason,
+      close,
+      amount,
+    },
+  };
+  await sgMail.send(msg);
   res.sendStatus(200);
 });
 

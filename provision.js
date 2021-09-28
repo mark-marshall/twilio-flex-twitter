@@ -120,6 +120,7 @@ const runProvision = async () => {
       contactIdentity: 'contact-identity',
       friendlyName: 'Flex Twitter Channel Flow',
       chatServiceSid: defaultFlexChatServiceSid,
+      janitorEnabled: true,
     });
     const flexFlowSid = flexFlow.sid;
     // Add .env Items
