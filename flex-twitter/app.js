@@ -50,7 +50,7 @@ app.post('/fromTwitter', (req, res) => {
     const twitterId = customer.id;
     // Check to make sure this is a message sent from the customer
     // rather than a Direct Message we sent on behalf of the agent from our app
-    if (twitterHandle !== process.env.TWITTER_CO_HANDLE) {
+    if (!req.body.direct_message_events[0].message_create.source_app_id) {
       const msg =
         req.body.direct_message_events[0].message_create.message_data.text;
       functions.sendMessageToFlex(twilioClient, msg, twitterHandle, twitterId);
