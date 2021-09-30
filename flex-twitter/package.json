@@ -1,7 +1,7 @@
 {
   "name": "twilio-flex-twitter",
   "version": "1.0",
-  "description": "Proof of concept middleware between Twilio Flex and Twitter Direct Messaging",
+  "description": "Middleware between Twilio Flex and Twitter Direct Messaging",
   "private": false,
   "dependencies": {
     "base-64": "^1.0.0",

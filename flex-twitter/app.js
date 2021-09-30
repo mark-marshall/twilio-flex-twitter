@@ -3,12 +3,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const twilio = require('twilio');
 const Twitter = require('twit');
+var cors = require('cors');
 
 // ================== Function Imports ==================
 const functions = require('./functions');
 
 // ================== Initialise App ==================
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -47,7 +49,7 @@ app.post('/fromTwitter', (req, res) => {
     const twitterId = customer.id;
     // Check to make sure this is a message sent from the customer
     // rather than a Direct Message we sent on behalf of the agent from our app
-    if (twitterHandle !== process.env.TWITTER_CO_HANDLE) {
+    if (!req.body.direct_message_events[0].message_create.source_app_id) {
       const msg =
         req.body.direct_message_events[0].message_create.message_data.text;
       functions.sendMessageToFlex(twilioClient, msg, twitterHandle, twitterId);
