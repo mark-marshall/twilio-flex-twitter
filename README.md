@@ -44,3 +44,28 @@ yarn install
 ```
 node server.js
 ```
+
+## Deploy Plugin (Optional)
+1. Install the Flex Plugins CLI
+Follow instructions at https://www.twilio.com/docs/flex/developer/plugins/cli/install
+
+2. Navigate to the plugin folder
+```
+cd flex-twitter-plugin
+```
+
+3. Install dependencies
+```
+npm install
+```
+
+4. Deploy plugin
+```
+twilio flex:plugins:deploy --major --changelog "Adding Twitter Channel UI" --description "Adding Twitter Channel UI"
+```
+
+5. Enable plugin
+```
+twilio flex:plugins:release --name "Twitter Channel UI" --description "Enabling Twitter Channel UI" --plugin plugin-sample@1.0.0
+```
+
