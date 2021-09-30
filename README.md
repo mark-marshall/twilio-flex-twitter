@@ -47,7 +47,7 @@ node server.js
 
 ## Deploy Plugin (Optional)
 1. Install the Flex Plugins CLI
-Follow instructions at https://www.twilio.com/docs/flex/developer/plugins/cli/install
+* Follow instructions at https://www.twilio.com/docs/flex/developer/plugins/cli/install
 
 2. Navigate to the plugin folder
 ```
